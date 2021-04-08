@@ -1,0 +1,26 @@
+1. Metode:
+1.1. numele metodei "imprumut()" nu reflecta scopul ei, am redenumit in "getValoareImprumut()"
+1.2. metodele calculeaza valori intermediare, astfel ca nu respecta principiile Single Responsability si KISS
+1.3. metoda "print()" nu are niciun scop definit, singura variabila (vb=10) fiind nefolosita; am eliminat cu totul metoda
+1.4. metoda "calculeaza()" calculeaza valori intermediare; le-am eliminat creand metoda "getDobandaPrincipala()"
+1.5. am eliminat variabila "temp", aceasta nefiind utilizata
+1.6. metoda "calculeaza()" primeste un parametru de tip vector, pe care l-am modificat in parametru de tip ArrayList, pentru o mai buna performanta a operatiilor
+1.7. am redenumit metoda "calculeaza()" in "getComisionTotal()" pentru a reflecta scopul ei
+1.8. am modificat formula pentru calcularea dobanzii principale astfel incat sa fie mai usor de urmarit: this.valoareImprumut * (Math.pow(this.rata, (this.zileContActiv / 365)) - 1)
+
+2. Clase si interfete:
+2.1. am modificat accesul atributelor clasei din default (package) in private
+2.2. am creat InterfataValidare pentru a trata exceptia definita pentru valoare invalida
+2.3. acolo unde lipsea, am adaugat referinta "this" pentru a diferentia atributele clasei de parametrii metodelor 
+2.4. am redenumit atributul "zileActiv" in "zileContActiv" pentru o intelegere mai usoara
+
+3. Enums:
+3.1. in loc de valorile hardcodate de tip int, voi folosi un enum TipCont pentru a retine tipurile de conturi existente (STANDARD, BUGET, PREMIUM, SUPER_PREMIUM)
+
+4. Exceptii:
+4.1. am creat o exceptie custom pentru a indica o valoare invalida a imprumutului
+
+5. General Programming:
+5.1. am redenumit variabilele si metodele care nu respectau mixedCamelCase (toString(), valoareImprumut)
+5.2. am indentat intreg codul pentru a fi mai usor de urmarit
+5.3. am creat variabila statica BROKERS_FEE pentru valoarea de 1.25% care nu se modifica niciodata
